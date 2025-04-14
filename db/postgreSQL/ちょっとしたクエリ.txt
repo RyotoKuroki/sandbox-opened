@@ -1,0 +1,17 @@
+--日付カラムの値から年度を取得する
+SELECT
+    your_date_column,
+    CASE
+        WHEN EXTRACT(MONTH FROM your_date_column) >= 4
+            THEN EXTRACT(YEAR FROM your_date_column)
+        ELSE EXTRACT(YEAR FROM your_date_column) - 1
+    END AS fiscal_year
+FROM
+    your_table;
+
+
+
+
+
+
+
